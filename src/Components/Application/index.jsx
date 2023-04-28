@@ -1,4 +1,4 @@
-import { ContainerApp, ContentApp, MoviesContent } from './styles'
+import { ContainerApp, ContentApp, MoviesContent, Loader } from './styles'
 import { useState } from 'react';
 import logo from '../../assets/logo.png'
 import { Card } from '../CardMovie/index.jsx'
@@ -12,6 +12,7 @@ export function Application() {
     const [pergunta, setPergunta] = useState('');
     const [movies, setMovies] = useState([]);
     const [isActive, setIsActive] = useState(false);
+    const [isLoader ,setisLoader] = useState(false);
   
     async function searchMovie(string) {
       let lista = string.split(', ');
@@ -32,10 +33,12 @@ export function Application() {
     
       setMovies(tempMovies);
       setIsActive(true);
+      setisLoader(false);
       console.log(tempMovies);
     }
     
     async function handleClick() {
+      setisLoader(true);
       try {
         const cliente = axios.create({
           headers: {Authorization: 'Bearer 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'}
@@ -61,20 +64,27 @@ export function Application() {
    
     return (
             <>
-            <ContentApp searchActive={isActive}>
-                <ContainerApp>
+             {
+                  isLoader && (
+                    <Loader>
+                      <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    </Loader>
+                  )
+                 }
+            <ContentApp searchActive={isActive} isLoader={isLoader}>
+                <ContainerApp> 
                 <div className="top-content">
                     <img src= {logo} alt="" />
                     <h1>Qual o filme certo pra você hoje?</h1>
-                    <p>Nossa plataforma utiliza algoritmos inteligentes para recomendar filmes que combinam com sua idade, interesses e estágio atual da vida.</p>
+                    <p>Nossa plataforma utiliza inteligência artificial para recomendar filmes que tenham alguma relação com as cacteristicas ou contextos que você descrever no campo de pesquisa!</p>
                 </div>
                 <div className="input-content">
                     <span>Vamos Começar!</span>
-                    <p>Digite caracteristas do filme que você deseja assistir...</p>
+                    <p>Digite as caracteristicas ou o contexto do filme que você deseja assistir...</p>
                     <div className="search">
                     <input 
                       type="text" 
-                      placeholder='Ex: filme que conta a histórias de empreendedores de sucesso.'
+                      placeholder='Ex: filmes para estudantes de direito'
                       value = {pergunta}
                       onChange={(event) => setPergunta(event.target.value)}
                     />

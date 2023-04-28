@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Box = styled.div`
-    padding: 37px 101px;
-    width: 100%;
     max-width: 90rem;
     background: rgba(41, 46, 157, 0.26);
     border-radius: 15px;
@@ -13,10 +11,11 @@ export const Box = styled.div`
         margin-top: 2rem;
     }
     .image {
-        width: 18.9rem;
-        height: 27.3rem;
+        width: 100%;
+        max-width: 269px;
+        height: 100%;
         overflow: hidden;
-        border-radius: 10px;
+        border-radius: 10px 0 0 10px;
         img {
             width: 100%;
             height: 100%;
@@ -24,8 +23,9 @@ export const Box = styled.div`
         }
     }
     .content{
-        max-width: 47.6rem;
-        margin-left: 4.3rem;
+        max-width: 63rem;
+        height: 100%;
+        padding: 30px 30px 30px 20px;
         h4 {
             font-weight: 600;
             font-size: 35px;
@@ -44,6 +44,19 @@ export const Box = styled.div`
             font-weight: 300;
             font-size: 14px;
             line-height: 135.5%;
+        }
+    }
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        .image {
+            max-width: 63rem;
+            max-height: 636px;
+        }
+        .content {
+            height: auto;
+            h4 {
+               font-size: 30px;
+            }
         }
     }
 `

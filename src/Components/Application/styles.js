@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 import bg from '../../assets/bg.svg'
+import bgmobile from '../../assets/bgmobile.svg'
 
 
 export const ContainerApp = styled.div`
         width: 100%;
         max-width: 76.7rem;
+        padding: 0 20px;
         margin: 0 auto;
         font-size: 5rem;
 
@@ -12,6 +14,8 @@ export const ContainerApp = styled.div`
 
 export const ContentApp = styled.div`
         pointer-events: ${({searchActive}) => (searchActive) ? 'none' : 'all'};
+        opacity: ${({isLoader}) => (isLoader) ? '.1' : '1'};
+        transition: all .5s;
         position: relative;
         height: 100vh;
         width: 100%;
@@ -75,7 +79,7 @@ export const ContentApp = styled.div`
                         background-color: #000040;
                         padding-left: 2.5rem;
                         padding-right: 0.7rem;
-                        transition: all 1s;
+                        transition: all 0.8s;
                         &:hover {
                         border-color: #00F58E;
                         box-shadow: 0px 0px 53px -9px #00F58E;
@@ -116,89 +120,36 @@ export const ContentApp = styled.div`
 }
               
                 
-}
-`
-export const ContentAppActive = styled.div`
-        pointer-events: none;
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: url(${bg}) center center no-repeat;
-        background-size: cover;
-        .top-content {
-                margin-top: 20rem;
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               flex-direction: column;
-                
-                h1 {
-                    margin-top: 6.8rem;
-                    font-size: 60px;
-                    text-align: center;
-                    width: 100%;
-                    max-width: 55.6rem;
+        }
+        @media (max-width: 450px) {
+                background: url(${bgmobile}) center center no-repeat;
+                .top-content {
+                        margin-top: 6rem;
+                        h1 {
+                             font-size: 5.5rem;
+                        }
+                        p {
+                           font-size: 16px;
+                        }
                 }
-                p {
-                   margin-top: 3.3rem;
-                   font-weight: 300;
-                   font-size: 18px;
-                   line-height: 136%;
-                   text-align: center;
+                .input-content {
+                        .search{
+                                input[type="text"] {
+                                        width: 68%;
+                                    &::placeholder {
+                                    font-size:12px;
+                                }
+                                }
+                                
+                        }
                 }
         }
-        .input-content {
-                margin-top: 4.5rem;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                span {
-                        font-weight: 700;
-                        font-size: 20px;
-                        color: #00F58E;
-                        margin-bottom: 5rem;
-                }
-                input {
-                        width: 100%;
-                        max-width: 76.7rem;
-                        height: 13.8rem;
-                        background: rgba(0, 0, 64, 0.54);
-                        backdrop-filter: blur(25px);
-                        color: #fff;
-                        padding: 8px;
-                        font-size: 16px;
-                        border: 1px solid #ccc;
-                        border-radius: 15px;
-                        box-shadow: 0 0 5px #ccc;
-                        transition: box-shadow 0.2s ease;
-                        
-                }
-                input:focus {
-                        border-color: #00F58E;
-                        box-shadow: 0 0 5px #00f;
-                }
-                button {
-                        margin-top: 30px;
-                        width: 32rem;
-                        height: 6rem;
-                        border-radius: 10px;
-                        border: none;
-                        font-weight: 400;
-                        font-size: 20px;
-                        color: #fff;
-                        background: linear-gradient(93.27deg, #00F58E 2.5%, #008E52 37.86%, #005632 69.36%);
-                        cursor: pointer;
-                }
-}
 `
+
 export const MoviesContent = styled.div`
         pointer-events: ${({searchActive}) => (searchActive) ? 'all' : 'none'};
         transform: translateY(${({searchActive}) => (searchActive) ? '0' : '100%'});
-        transition: transform 2s ease-in;
+        transition: transform 0.3s ease-in;
         position: fixed;
         bottom: 0;
         z-index: 2000;
@@ -210,7 +161,7 @@ export const MoviesContent = styled.div`
         align-items: center;
         justify-content: flex-end;
         .box {
-                padding-bottom: 5.8rem;
+                padding: 2rem 1.5rem 5.8rem 1.5rem;
                 height: 100vh;
                 width: 100%;
                 background-color: #000040;
@@ -251,4 +202,107 @@ export const MoviesContent = styled.div`
                     margin-bottom: 4.5rem
                 }
         }
+        @media (max-width: 450px){
+                .box {
+                        h2 {
+                                text-align: center;
+                                font-size: 35px;
+                        }
+                        span {
+                                font-size: 20px;
+                        }
+                }
+        } 
+`
+export const Loader = styled.div`
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+.lds-roller {
+  z-index: 2000;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00F58E;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 `
