@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { Application } from '../Components/Application/index'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -14,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         background-color: #000040;
         color: #fff;
+        overflow-y:  auto;
     }
 
 
