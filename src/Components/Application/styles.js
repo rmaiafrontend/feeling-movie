@@ -123,7 +123,6 @@ export const ContentApp = styled.div`
                 
         }
         @media (max-width: 450px) {
-                height: 100rem;
                 background: url(${bgmobile}) center center no-repeat;
                 background-size: cover;
                 .top-content {
