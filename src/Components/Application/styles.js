@@ -208,10 +208,11 @@ export const MoviesContent = styled.div`
                 .box {
                         h2 {
                                 text-align: center;
-                                font-size: 35px;
+                                font-size: 30px;
                         }
                         span {
-                                font-size: 20px;
+                                font-size: 18px;
+                                line-height: 25px;
                         }
                 }
         } 
