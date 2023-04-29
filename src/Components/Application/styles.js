@@ -14,6 +14,7 @@ export const ContainerApp = styled.div`
 
 export const ContentApp = styled.div`
         pointer-events: ${({searchActive}) => (searchActive) ? 'none' : 'all'};
+        overflow-y:  ${({searchActive}) => (searchActive) ? 'hidden' : 'auto'};
         opacity: ${({isLoader}) => (isLoader) ? '.1' : '1'};
         transition: all .5s;
         position: relative;
