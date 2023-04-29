@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
     body {
         background-color: #000040;
         color: #fff;
-        overflow-y:  auto;
     }
 
 

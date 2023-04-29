@@ -1,4 +1,4 @@
-import { ContainerApp, ContentApp, MoviesContent, Loader } from './styles'
+import { ContainerApp, ContentApp, MoviesContent, Loader} from './styles'
 import { useState } from 'react';
 import logo from '../../assets/logo.svg'
 import { Card } from '../CardMovie/index.jsx'
@@ -37,8 +37,13 @@ export function Application() {
       console.log(tempMovies);
     }
     
+    function closeButton() {
+      setIsActive(false);
+      document.body.style.overflow = 'auto';
+    }
     async function handleClick() {
       setisLoader(true);
+      document.body.style.overflow = 'hidden';
       try {
         const cliente = axios.create({
           headers: {Authorization: 'Bearer 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'}
@@ -70,7 +75,7 @@ export function Application() {
                       <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                     </Loader>
                   )
-                 }
+                 } 
             <ContentApp searchActive={isActive} isLoader={isLoader}>
                 <ContainerApp> 
                 <div className="top-content">
@@ -95,7 +100,7 @@ export function Application() {
             </ContentApp>
             <MoviesContent searchActive={isActive}>
                 <div className="box">
-                    <button onClick={(event) => setIsActive(false)}>Fechar X</button>
+                    <button onClick={(event) => closeButton()}>Fechar X</button>
                     <img src={logo} alt="" />
                     <h2>Nos esforçamos para anteder seu pedido...</h2>
                     <span>Aqui estão algumas recomendações de filmes para você:</span>
@@ -112,8 +117,7 @@ export function Application() {
                     }
                                                                                                                                                                                                              
                 </div>
-                </MoviesContent>
-
+            </MoviesContent>        
             </>
      
     )
