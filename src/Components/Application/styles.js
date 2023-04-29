@@ -6,7 +6,7 @@ import bgmobile from '../../assets/bgmobile.svg'
 export const ContainerApp = styled.div`
         width: 100%;
         max-width: 76.7rem;
-        padding: 0px 20px 80px 20px;
+        padding: 0 20px;
         margin: 0 auto;
         font-size: 5rem;
 
@@ -27,7 +27,7 @@ export const ContentApp = styled.div`
         background: url(${bg}) center center no-repeat;
         background-size: cover;
         .top-content {
-                margin-top: 20rem;
+              margin-top: 20rem;
                display: flex;
                align-items: center;
                justify-content: center;
@@ -126,12 +126,12 @@ export const ContentApp = styled.div`
                 background: url(${bgmobile}) center center no-repeat;
                 background-size: cover;
                 .top-content {
-                        margin-top: 12rem;
+                        margin-top: 2rem;
                         h1 {
-                             font-size: 5.5rem;
+                            font-size: 45px;
                         }
                         p {
-                           font-size: 16px;
+                           font-size: 14px;
                         }
                 }
                 .input-content {
@@ -156,7 +156,7 @@ export const MoviesContent = styled.div`
         bottom: 0;
         z-index: 2000;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -164,7 +164,7 @@ export const MoviesContent = styled.div`
         justify-content: flex-end;
         .box {
                 padding: 2rem 1.5rem 5.8rem 1.5rem;
-                height: 95vh;
+                height: 92%;
                 width: 98%;
                 border-radius: 15px 15px 0 0;
                 background-color: #000040;

@@ -80,7 +80,7 @@ export function Application() {
                 <ContainerApp> 
                 <div className="top-content">
                     <img src= {logo} alt="" />
-                    <h1>Qual o filme certo pra você hoje?</h1>
+                    <h1>Pesquise o filme perfeito pra você hoje!</h1>
                     <p>Nossa plataforma utiliza inteligência artificial para recomendar filmes que tenham alguma relação com as cacteristicas ou contextos que você descrever no campo de pesquisa!</p>
                 </div>
                 <div className="input-content">
