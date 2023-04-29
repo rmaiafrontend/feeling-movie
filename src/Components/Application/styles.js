@@ -164,8 +164,9 @@ export const MoviesContent = styled.div`
         justify-content: flex-end;
         .box {
                 padding: 2rem 1.5rem 5.8rem 1.5rem;
-                height: 100vh;
-                width: 100%;
+                height: 95vh;
+                width: 98%;
+                border-radius: 15px 15px 0 0;
                 background-color: #000040;
                 background: rgba(0, 0, 64, 0.74);
                 backdrop-filter: blur(9.5px);
