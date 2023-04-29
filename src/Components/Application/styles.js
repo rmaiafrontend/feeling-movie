@@ -6,7 +6,7 @@ import bgmobile from '../../assets/bgmobile.svg'
 export const ContainerApp = styled.div`
         width: 100%;
         max-width: 76.7rem;
-        padding: 0 20px;
+        padding: 0px 20px 80px 20px;
         margin: 0 auto;
         font-size: 5rem;
 
