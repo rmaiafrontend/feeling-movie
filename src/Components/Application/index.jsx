@@ -1,6 +1,6 @@
 import { ContainerApp, ContentApp, MoviesContent, Loader } from './styles'
 import { useState } from 'react';
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.svg'
 import { Card } from '../CardMovie/index.jsx'
 import axios from 'axios';
 
@@ -97,7 +97,7 @@ export function Application() {
                 <div className="box">
                     <button onClick={(event) => setIsActive(false)}>Fechar X</button>
                     <img src={logo} alt="" />
-                    <h2>Entendemos o seu momento...</h2>
+                    <h2>Nos esforçamos para anteder seu pedido...</h2>
                     <span>Aqui estão algumas recomendações de filmes para você:</span>
                     {
                      movies && movies.map(movie => (

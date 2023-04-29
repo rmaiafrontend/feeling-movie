@@ -49,6 +49,7 @@ export const Box = styled.div`
     @media (max-width: 1000px) {
         flex-direction: column;
         .image {
+            border-radius: 10px 10px 0 0;
             max-width: 63rem;
             max-height: 636px;
         }

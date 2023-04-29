@@ -122,9 +122,11 @@ export const ContentApp = styled.div`
                 
         }
         @media (max-width: 450px) {
+                height: 100rem;
                 background: url(${bgmobile}) center center no-repeat;
+                background-size: cover;
                 .top-content {
-                        margin-top: 6rem;
+                        margin-top: 12rem;
                         h1 {
                              font-size: 5.5rem;
                         }
@@ -176,7 +178,7 @@ export const MoviesContent = styled.div`
                         padding: 15px;
                         width: 100%;
                         background-color: rgb(0, 0, 64);
-                        color: #ffff;
+                        color: #00F58E;
                         font-size: 15px;
                         font-weight: 600;
                         border-radius: 5px;
