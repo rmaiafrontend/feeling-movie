@@ -38,12 +38,12 @@ export const ContentApp = styled.div`
                     font-size: 60px;
                     text-align: center;
                     width: 100%;
-                    max-width: 55.6rem;
+                    max-width: 72.6rem;
                 }
                 p {
                    margin-top: 3.3rem;
                    font-weight: 300;
-                   font-size: 18px;
+                   font-size: 16px;
                    line-height: 136%;
                    text-align: center;
                 }

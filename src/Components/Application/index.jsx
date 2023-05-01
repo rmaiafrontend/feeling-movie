@@ -46,7 +46,7 @@ export function Application() {
       document.body.style.overflow = 'hidden';
       try {
         const cliente = axios.create({
-          headers: {Authorization: 'Bearer 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'}
+          headers: {Authorization: 'Bearer {SUA_API_KEY}'}
         });
     
         const params = {
