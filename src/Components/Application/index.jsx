@@ -6,13 +6,15 @@ import axios from 'axios';
 
 
 
-
 export function Application() {
+    const apiKey = import.meta.env.VITE_API_KEY;
     const [resposta, setResposta] = useState('');
     const [pergunta, setPergunta] = useState('');
     const [movies, setMovies] = useState([]);
     const [isActive, setIsActive] = useState(false);
     const [isLoader ,setisLoader] = useState(false);
+  
+
   
     async function searchMovie(string) {
       let lista = string.split(', ');
@@ -46,7 +48,7 @@ export function Application() {
       document.body.style.overflow = 'hidden';
       try {
         const cliente = axios.create({
-          headers: {Authorization: 'Bearer {SUA_API_KEY}'}
+          headers: {Authorization: `Bearer ${apiKey}`}
         });
     
         const params = {
