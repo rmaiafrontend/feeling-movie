@@ -1,4 +1,4 @@
-# Projeto Feeling Movio
+# Projeto Feeling Movie
 
 Aplicação React que retorna sugestão de filmes baseado nas características ou contexto fornecido pelo o usuário.
 
